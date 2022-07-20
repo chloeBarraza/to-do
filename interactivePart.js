@@ -1,6 +1,6 @@
 function addElement() {
   let theList = [];
   const newListItem = document.getElementById("newItem");
-
-  console.log("test");
+  theList.push(newListItem);
+  console.log(theList);
 }
