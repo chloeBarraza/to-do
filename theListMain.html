@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <title>To-do Application</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type = 'text/javascript' src = 'interactivePart.js'></script>
   </head>
+
 
   <body class="backgroundDesk">
     <div class="bodyLayout">
       <div class="stickyNote">
         <h3><u>To-do list:</u></h3>
+
       </div>
+      <form>
+        <br>
+        <input type="text" id="newItem"></input>
+        <button onclick ="addElement(newItem)"><strong> Add </strong></button>
+      </form>
+      
     </div>
   </body>
 </html>

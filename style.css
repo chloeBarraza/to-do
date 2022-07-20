@@ -29,3 +29,10 @@ body {
 html {
   padding: 0px 0px 0px 0px;
 }
+input {
+  height: 20px;
+}
+button {
+  height: 27px;
+  width: 100px;
+}
