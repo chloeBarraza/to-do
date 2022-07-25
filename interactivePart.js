@@ -6,6 +6,13 @@ window.onload = function () {
   // Get elements
   const newListItem = document.getElementById("newItem");
   const addButton = document.getElementById("add");
+  const showArray = document
+    .getElementById("arrPrint")
+    .appendChild(
+      document
+        .createElement("li")
+        .appendChild(document.createTextNode(theList[i]))
+    );
 
   // Add on click to add button
   addButton.onclick = function () {
@@ -24,6 +31,12 @@ window.onload = function () {
   function addElement() {
     theList.push(newListItem.value);
     console.log(theList);
+    printArray();
+  }
+
+  function printArray() {
+    for (let i = 0; i < theList.length; i++) {
+      theList[i];
+    }
   }
 };
-//<3 u Chris
