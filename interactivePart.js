@@ -4,7 +4,7 @@ window.onload = function () {
   let theList = [];
 
   // Get elements
-  const newListItem = document.getElementById("newItem");
+  const newListItem = document.getElementById("newListItem");
   const addButton = document.getElementById("add");
 
   // Add on click to add button
@@ -20,19 +20,22 @@ window.onload = function () {
 
   function addElement() {
     theList.push(newListItem.value);
-    console.log(theList);
-    printArray();
+    //console.log(theList);
+    displayArray();
   }
 
-  function printArray() {
+  function displayArray() {
+    const listElement = document.getElementById("list");
+    //clear page of list item elements
+    while (listElement.hasChildNodes()) {
+      listElement.removeChild(listElement.firstChild);
+    }
+
     for (let i = 0; i < theList.length; i++) {
-      const showArray = document
-        .getElementById("arrPrint")
-        .appendChild(
-          document
-            .createElement("li")
-            .appendChild(document.createTextNode(theList[i]))
-        );
+      const node = document.createElement("li");
+      const textNode = document.createTextNode(theList[i]);
+      node.appendChild(textNode);
+      listElement.appendChild(node);
     }
   }
 };
