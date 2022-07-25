@@ -6,27 +6,17 @@ window.onload = function () {
   // Get elements
   const newListItem = document.getElementById("newItem");
   const addButton = document.getElementById("add");
-  const showArray = document
-    .getElementById("arrPrint")
-    .appendChild(
-      document
-        .createElement("li")
-        .appendChild(document.createTextNode(theList[i]))
-    );
 
   // Add on click to add button
   addButton.onclick = function () {
     addElement();
+    clearField();
     return false;
   };
 
-  /**
-   * Alternative syntax for anonymous functions
-   * addButton.click = () => {
-   *  addElement();
-   *  return false;
-   * }
-   */
+  function clearField() {
+    newListItem.value = "";
+  }
 
   function addElement() {
     theList.push(newListItem.value);
@@ -36,7 +26,21 @@ window.onload = function () {
 
   function printArray() {
     for (let i = 0; i < theList.length; i++) {
-      theList[i];
+      const showArray = document
+        .getElementById("arrPrint")
+        .appendChild(
+          document
+            .createElement("li")
+            .appendChild(document.createTextNode(theList[i]))
+        );
     }
   }
 };
+
+/**
+ * Alternative syntax for anonymous functions
+ * addButton.click = () => {
+ *  addElement();
+ *  return false;
+ * }
+ */
