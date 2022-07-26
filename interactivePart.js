@@ -24,6 +24,18 @@ window.onload = function () {
     displayArray();
   }
 
+  function removeElement(e) {
+    for (let i = 0; i < theList.length; i++) {
+      if (theList[i] == e.target.textContent) {
+        theList.splice(i, 1);
+        //theList[i].write([i].strike());
+      }
+    }
+    displayArray();
+  }
+
+  function editElement() {}
+
   function displayArray() {
     const listElement = document.getElementById("list");
     //clear page of list item elements
@@ -35,6 +47,8 @@ window.onload = function () {
       const node = document.createElement("li");
       const textNode = document.createTextNode(theList[i]);
       node.appendChild(textNode);
+      node.ondblclick = removeElement;
+      //node.onclick = editElement;
       listElement.appendChild(node);
     }
   }
