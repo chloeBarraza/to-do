@@ -20,7 +20,6 @@ window.onload = function () {
 
   function addElement() {
     theList.push(newListItem.value);
-    //console.log(theList);
     displayArray();
   }
 
@@ -34,7 +33,18 @@ window.onload = function () {
     displayArray();
   }
 
-  function editElement() {}
+  function editElement(e) {
+    newListItem.value = e.target.textContent; // put content into text box
+
+    for (let i = 0; i < theList.length; i++) {
+      // remove from array
+      if (theList[i] == e.target.textContent) {
+        theList.splice(i, 1);
+      }
+    }
+    console.log(newListItem);
+    displayArray();
+  }
 
   function displayArray() {
     const listElement = document.getElementById("list");
@@ -48,7 +58,7 @@ window.onload = function () {
       const textNode = document.createTextNode(theList[i]);
       node.appendChild(textNode);
       node.ondblclick = removeElement;
-      //node.onclick = editElement;
+      node.onclick = editElement;
       listElement.appendChild(node);
     }
   }
