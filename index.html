@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>To-do Application</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type = 'text/javascript' src = 'interactivePart.js'></script>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>To-do Application</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type='text/javascript' src='interactivePart.js'></script>
+</head>
 
 
-  <body class="backgroundDesk">
-    <div class="bodyLayout">
-      <div class="stickyNote">
-        <h2><u>To-do list:</u></h2>
-        <ul id="list"></ul>
+<body>
+  <div class="background">
+    <div class="layout">
+      <div>
+        <div class="stickyNote">
+          <h2><u>To-do List:</u></h2>
+          <ul id="list"></ul>
+        </div>
+
+        <form>
+          <br>
+          <input type="text" id="newListItem"></input>
+          <button id="add"><strong> Add </strong></button>
+        </form>
       </div>
-      <form>
-        <br>
-        <input type="text" id="newListItem"></input>
-        <button id="add"><strong> Add </strong></button>
-      </form>
-      
+
     </div>
-  </body>
+  </div>
+
+</body>
+
 </html>
